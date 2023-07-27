@@ -1,0 +1,52 @@
+.container {
+  --margin: 2px;
+  --width: 120px;
+  --height: 120px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.parent {
+  margin: var(--margin);
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+}
+
+.child {
+  top: 2000px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: top 1s ease-in-out;
+}
+
+.light {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  box-shadow: -10px 10px 20px 5px black, -10px 10px 20px 5px black;
+}
+
+.lightTop {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  top: 2000px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+  background-color: rgb(116, 116, 116);
+  transition: top 1s ease-in-out;
+}
+
+.medium {
+  background-color: rgb(69, 69, 69);
+}
+
+.dark {
+  background-color: rgb(37, 37, 37);
+}
