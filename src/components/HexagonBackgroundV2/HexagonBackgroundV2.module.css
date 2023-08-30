@@ -1,0 +1,72 @@
+.main {
+  display: flex;
+  --s: 100px; /* size  */
+  --m: 2px; /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
+  overflow: hidden;
+  /* background-color: white; */
+}
+
+.bigContainer {
+  position: relative;
+}
+
+.containerWrapperTop {
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+}
+.containerWrapperBottom {
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  font-size: 0; /* disable white space between inline block element */
+  max-width: 1000px;
+}
+
+.topSheet {
+  font-size: 0; /* disable white space between inline block element */
+  filter: drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.7))
+    drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.7));
+}
+
+.bottomSheet {
+  font-size: 0; /* disable white space between inline block element */
+}
+
+.hex {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s) * 1.1547);
+  display: inline-block;
+  font-size: initial;
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
+
+.container::before {
+  content: "";
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(
+    #0000 0 calc(var(--f) - 3px),
+    #000 0 var(--f)
+  );
+}
+
+/* .light {
+    background-color: rgb(116, 116, 116);
+  }
+  
+  .medium {
+    background-color: rgb(69, 69, 69);
+  }
+  
+  .dark {
+    background-color: rgb(37, 37, 37);
+  } */
